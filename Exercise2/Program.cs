@@ -5,7 +5,7 @@ namespace QuickShort
     class Program
     {
 
-        private int[] arr = new int[20];
+        private int[] arr = new int[70];
         private int cmp_count = 0;
         private int mov_count = 0;
 
@@ -18,10 +18,10 @@ namespace QuickShort
                 Console.Write("Enter the number of element in array");
                 string s = Console.ReadLine();
                 n = Int32.Parse(s);
-                if (n <= 20)
+                if (n <= 70)
                     break;
                 else
-                    Console.WriteLine("\nArray can have maximum 20 element \n");
+                    Console.WriteLine("\nArray can have maximum 70 element \n");
             }
             Console.WriteLine("\n=======================");
             Console.WriteLine("Enter Array Elements");
@@ -104,20 +104,6 @@ namespace QuickShort
         {
             return (n);
         }
-        static void Main(string[] args)
-        {
-            //Declaring the object of the class
-            Program myList = new Program();
-            //Accept array elements
-            myList.input();
-            //Calling the sorting function
-            //First call to quick sort algorithm
-            myList.q_sort(0, myList.getSize() - 1);
-            //Display sorted array
-            myList.display();
-            // to exit from the console
-            Console.WriteLine("\n\nPress Enter to exit.");
-            Console.Read();
-        }
+
     }
 }
