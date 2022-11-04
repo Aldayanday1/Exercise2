@@ -100,6 +100,10 @@ namespace QuickShort
             Console.WriteLine("\nNumber of data comparisons: " + cmp_count);
             Console.WriteLine("\nNumber of data movements:" + mov_count);
         }
+        int getSize()
+        {
+            return (n);
+        }
 
     }
 }
