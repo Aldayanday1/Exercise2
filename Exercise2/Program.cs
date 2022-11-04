@@ -5,7 +5,7 @@ namespace QuickShort
     class Program
     {
 
-        private int[] arr = new int[70];
+        private int[] aldi = new int[70];
         private int cmp_count = 0;
         private int mov_count = 0;
 
@@ -31,16 +31,16 @@ namespace QuickShort
             {
                 Console.Write("<" + (i + 1) + ">");
                 string s1 = Console.ReadLine();
-                arr[i] = Int32.Parse(s1);
+                aldi[i] = Int32.Parse(s1);
             }
 
         }
         void swap(int x, int y)
         {
             int temp;
-            temp = arr[x];
-            arr[x] = arr[y];
-            arr[y] = temp;
+            temp = aldi[x];
+            aldi[x] = aldi[y];
+            aldi[y] = temp;
         }
 
         public void q_sort(int low, int high)
@@ -51,18 +51,18 @@ namespace QuickShort
 
             i = low + 1;
             MF = high;
-            pivot = arr[low];
+            pivot = aldi[low];
             while (i <= MF)
             {
 
-                while ((arr[i] <= pivot) && (i <= high))
+                while ((aldi[i] <= pivot) && (i <= high))
                 {
                     i++;
                     cmp_count++;
                 }
                 cmp_count++;
 
-                while ((arr[MF] > pivot) && (MF >= low))
+                while ((aldi[MF] > pivot) && (MF >= low))
                 {
                     MF--;
                     cmp_count++;
@@ -95,7 +95,7 @@ namespace QuickShort
             Console.WriteLine("-----------------------");
             for (int MF = 0; MF < n; MF++)
             {
-                Console.WriteLine(arr[MF]);
+                Console.WriteLine(aldi[MF]);
             }
             Console.WriteLine("\nNumber of data comparisons: " + cmp_count);
             Console.WriteLine("\nNumber of data movements:" + mov_count);
