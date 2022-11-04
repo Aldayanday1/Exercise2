@@ -45,14 +45,14 @@ namespace QuickShort
 
         public void q_sort(int low, int high)
         {
-            int pivot, i, j;
+            int pivot, i, MF;
             if (low > high)
                 return;
 
             i = low + 1;
-            j = high;
+            MF = high;
             pivot = arr[low];
-            while (i <= j)
+            while (i <= MF)
             {
 
                 while ((arr[i] <= pivot) && (i <= high))
@@ -62,30 +62,30 @@ namespace QuickShort
                 }
                 cmp_count++;
 
-                while ((arr[j] > pivot) && (j >= low))
+                while ((arr[MF] > pivot) && (MF >= low))
                 {
-                    j--;
+                    MF--;
                     cmp_count++;
                 }
                 cmp_count++;
-                if (i < j)
+                if (i < MF)
                 {
 
-                    swap(i, j);
+                    swap(i, MF);
                     mov_count++;
                 }
             }
 
-            if (low < j)
+            if (low < MF)
             {
 
-                swap(low, j);
+                swap(low, MF);
                 mov_count++;
             }
 
-            q_sort(low, j - 1);
+            q_sort(low, MF - 1);
 
-            q_sort(j + 1, high);
+            q_sort(MF + 1, high);
 
         }
         void display()
@@ -93,9 +93,9 @@ namespace QuickShort
             Console.WriteLine("\n---------------------");
             Console.WriteLine(" Sorted array elements ");
             Console.WriteLine("-----------------------");
-            for (int j = 0; j < n; j++)
+            for (int MF = 0; MF < n; MF++)
             {
-                Console.WriteLine(arr[j]);
+                Console.WriteLine(arr[MF]);
             }
             Console.WriteLine("\nNumber of data comparisons: " + cmp_count);
             Console.WriteLine("\nNumber of data movements:" + mov_count);
