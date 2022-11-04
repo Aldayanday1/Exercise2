@@ -23,6 +23,9 @@ namespace QuickShort
                 else
                     Console.WriteLine("\nArray can have maximum 20 element \n");
             }
+            Console.WriteLine("\n=======================");
+            Console.WriteLine("Enter Array Elements");
+            Console.WriteLine("\n=======================");
         }
 
     }
